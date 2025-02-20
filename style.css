@@ -1,0 +1,136 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Karla';
+    font-size: 16px;
+    font-weight: 400;
+}
+
+body {
+    padding: 20px; /* Shifts our card inwards to visualize it better */
+}
+
+h2, h4, p { /* Tackling default margins on browsers which leads to
+    missing up how everything is placed. */
+    margin: 0;
+}
+
+/* We need to fix the child containers breaking out
+of the parent container... So a basic CSS reset will
+make every element on the page abide by the
+border-box box sizing. Inherit root level box
+sizing! */
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+#card { /* Challenge has the specific measurements
+    in Style Guide! Though, we aren't following 
+    exactly. */
+    width: 600px;
+    height: 400px;
+    box-shadow: 2px 3px 7px 0px rgba(0,0,0,0.35); /* Box shadow 
+    generator CSS helps */
+    border-radius: 5px; /* Rounds the corners out */
+    overflow: hidden; /* Take perfect square children containers and
+    , since those are breaking out of the main container, we want the
+    main container CSS style to hide anything breaking out of it. */
+}
+
+#top-section {
+    width: 100%; /* Want top-section to fill up
+    the width of our main container */
+    height: 45%;
+    padding: 25px; /* Standard padding to add */
+}
+
+#bottom-section { /* Parent of bottom-left/right-sections */
+    width: 100%;
+    height: 55%;
+    color: white;
+}
+
+#bottom-left-section {
+    background-color: #2ab2af; /* Replace background border with color */
+}
+
+#bottom-right-section { 
+    background-color: #2ebfbd; /* Adobe color helps find suitable colors */ 
+}
+
+#bottom-left-section, #bottom-right-section {
+    display: inline-block; /* Whoops, must make this
+    and it's sibling inline-block elements to be
+    side-by-side! Oh! Must go into the HTML code itself and remove
+    the silly whitespace between the div siblings. */
+    width: 50%; /* Relative to parent container! */
+    height: 100%;
+    vertical-align: top; /* Snaps to the top of the parent box! */
+    padding: 25px;
+}
+
+#top-section /* pre-selector */ h2 /* grab every h2 element */ {
+    color: #2ab2af; /* Practicing our combinator skills! */
+    margin-bottom: 20px;
+}
+
+#top-section h4 {
+   color: #c0df34;
+   margin-bottom: 10px; 
+}
+
+#top-section p {
+    color: #98a6bd;
+}
+
+button {
+    color: white;
+    background-color: #c0df34;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #a9c42d;
+    transform: scale(1.02); /* Scaling it up! */
+}
+
+#price {
+    font-weight: 700;
+    font-size: 1.4rem; /* 140% of the root font size */
+}
+
+#bottom-left-section h4 {
+    margin-bottom: 25px;
+}
+
+#bottom-left-section p {
+    font-size: 0.8rem;
+    margin-bottom: 40px;
+}
+
+#price-frequency, #price {
+    display: inline-block;
+}
+
+#price-frequency {
+    position: relative; /* Fixing how per month is lined up 
+    with the bottom of the dollar sign*/
+    top: -3px;
+    font-size: 0.8rem;
+    opacity: 0.7; /* Makes the text lighter/transparent */
+    margin-left: 5px; /* Space on the left side of the text */
+}
+
+#price-container {
+    margin-bottom: 10px;
+}
+
+ul {
+    padding: 0;
+    list-style: none; /* Removes the bullets from the list! */
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
